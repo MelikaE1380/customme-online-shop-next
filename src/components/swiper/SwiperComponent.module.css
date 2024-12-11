@@ -1,0 +1,13 @@
+.customNavigation {
+  display: flex;
+  align-items: center;  /*تراز عمودی صحیح برای فلش‌ها */
+}
+
+.customArrow {
+   vertical-align: middle; /*تراز عمودی تصاویر */
+  cursor: pointer; /* تغییر اشاره‌گر موس به حالت اشاره‌گر */
+  position: static;
+  width: 24px; /* اندازه فلش‌ها */
+  height: 24px; /* اندازه فلش‌ها */
+  margin-bottom: 0px;
+}
