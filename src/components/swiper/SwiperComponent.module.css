@@ -1,13 +1,58 @@
 .customNavigation {
-  display: flex;
-  align-items: center;  /*تراز عمودی صحیح برای فلش‌ها */
+  direction: rtl;
+}
+
+
+.swiper-slide{
+  width: auto;
+  flex-shrink: 0;
 }
 
 .customArrow {
-   vertical-align: middle; /*تراز عمودی تصاویر */
-  cursor: pointer; /* تغییر اشاره‌گر موس به حالت اشاره‌گر */
-  position: static;
-  width: 24px; /* اندازه فلش‌ها */
-  height: 24px; /* اندازه فلش‌ها */
-  margin-bottom: 0px;
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.3s ease;
+}
+
+.customArrow.disabled {
+  opacity: 0.5;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  position: static !important; /* موقعیت ثابت */
+
+  background: rgba(0, 0, 0, 0.5); /* رنگ زمینه فلش‌ها */
+  border-radius: 50%; /* گرد کردن فلش‌ها */
+  padding: 8px; /* فاصله داخلی برای فلش‌ها */
+  color: white; /* رنگ فلش‌ها */
+}
+
+.swiper-button-prev {
+  left: 10px; /* مکان فلش قبلی */
+}
+
+.swiper-button-next {
+  right: 10px; /* مکان فلش بعدی */
+}
+
+.swiper-button-prev:disabled,
+.swiper-button-next:disabled {
+  opacity: 0.5; /* کم رنگ کردن فلش‌ها وقتی غیرفعال هستند */
+}
+
+
+.customNavigation .swiper-button-prev,
+.customNavigation .swiper-button-next {
+  position: static !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.1); /* پس‌زمینه شفاف */
+  border-radius: 50%; /* شکل دایره‌ای */
+}
+.customNavigation .swiper-button-prev img[disabled],
+.customNavigation .swiper-button-next img[disabled] {
+  opacity: 0.5;
 }

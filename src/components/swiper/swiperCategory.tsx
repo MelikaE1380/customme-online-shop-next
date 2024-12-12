@@ -10,12 +10,13 @@ import styles from './SwiperComponent.module.css'; // وارد کردن فایل
 const SwiperComponent = () => {
   return (
     <>
-      <div className="mt-[24px] px-[20px] flex justify-between items-center">
+      <div className="mt-[24px] px-[20px] flex justify-between items-baseline">
         <div>
           <p className="text-[#313131] font-bold">دسته بندی محصولات</p>
         </div>
         <div className={`flex items-center justify-center gap-[4px] ${styles.customNavigation}`}>
-        <img
+          
+          <img
             src="./icons/arrow-right.svg"
             className={`swiper-button-next ${styles.customArrow}`}
           />
@@ -23,100 +24,114 @@ const SwiperComponent = () => {
             src="./icons/arrow-left.svg"
             className={`swiper-button-prev ${styles.customArrow}`}
           />
-          
         </div>
       </div>
       <div className='pr-[20px] pt-[12px]'>
 
-      <Swiper 
+        <Swiper
+          dir="rtl"
           modules={[Navigation, Pagination]} // ماژول‌ها را به این شکل استفاده کنید
           navigation={{
             prevEl: '.swiper-button-prev', // دکمه قبلی
             nextEl: '.swiper-button-next', // دکمه بعدی
           }}
           pagination={false} // غیرفعال کردن صفحه‌بندی (سه نقطه)
-          spaceBetween={0} // حذف فضای بین اسلایدها
-          slidesPerView={4} // هر بار فقط یک اسلاید نمایش داده شود
-          loop={true} // چرخه‌ای بودن اسلایدها
+          spaceBetween={12} // تنظیم فضای بین اسلایدها
+          slidesPerView={4} // هر بار چهار اسلاید نمایش داده شود
+          loop={false} // چرخه‌ای بودن اسلایدها
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log('slide change')}
           breakpoints={{
             // تنظیمات برای عرض‌های مختلف صفحه
             640: {
               slidesPerView: 1,
-              spaceBetween: 0,
+              spaceBetween: 12,
             },
             768: {
-              slidesPerView: 1,
-              spaceBetween: 0,
+              slidesPerView: 2,
+              spaceBetween: 12,
             },
             1024: {
-              slidesPerView: 1,
-              spaceBetween: 0,
+              slidesPerView: 3,
+              spaceBetween: 12,
+            },
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 12,
             },
           }}
         >
-        <SwiperSlide  className='w-[54px] ml-[12px] text-[12px] border-[1px] flex justify-start'>   
-          <div className='w-[68px] flex flex-col justify-center items-center'>
-          <div className='px-[4px]'>
-            <img src="./imgs/Rectangle978.png" className="w-[100%] pt-[8px]" />
-          </div>
-          <div>
-            <p>قاب موبایل</p>
-          </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide  className='w-[54px] h-[64px] ml-[12px] text-[12px] border-[1px] flex justify-start'>   
-          <div className='w-[68px] flex flex-col justify-center items-center'>
-          <div className='px-[4px]'>
-            <img src="./imgs/Rectangle978.png" className="w-[100%] pt-[8px]" />
-          </div>
-          <div>
-            <p>قاب موبایل</p>
-          </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide  className='w-[54px] h-[64px] ml-[12px] text-[12px] border-[1px] flex justify-start'>   
-          <div className='w-[68px] flex flex-col justify-center items-center'>
-          <div className='px-[4px]'>
-            <img src="./imgs/Rectangle978.png" className="w-[100%] pt-[8px]" />
-          </div>
-          <div>
-            <p>قاب موبایل</p>
-          </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide  className='w-[54px] h-[64px] ml-[12px] text-[12px] border-[1px] flex justify-start'>   
-          <div className='w-[68px] flex flex-col justify-center items-center'>
-          <div className='px-[4px]'>
-            <img src="./imgs/Rectangle978.png" className="w-[100%] pt-[8px]" />
-          </div>
-          <div>
-            <p>قاب موبایل</p>
-          </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide  className='w-[54px] h-[64px] ml-[12px] text-[12px] border-[1px] flex justify-start'>   
-          <div className='w-[68px] flex flex-col justify-center items-center'>
-          <div className='px-[4px]'>
-            <img src="./imgs/Rectangle978.png" className="w-[100%] pt-[8px]" />
-          </div>
-          <div>
-            <p>قاب موبایل</p>
-          </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide  className='w-[54px] h-[64px] ml-[12px] text-[12px] border-[1px] flex justify-start'>   
-          <div className='w-[68px] flex flex-col justify-center items-center'>
-          <div className='px-[4px]'>
-            <img src="./imgs/Rectangle978.png" className="w-[100%] pt-[8px]" />
-          </div>
-          <div>
-            <p>قاب موبایل</p>
-          </div>
-          </div>
-        </SwiperSlide>
-      </Swiper>
+          <SwiperSlide className='w-[54px] h-[64px] ml-[12px] text-[12px] border-[1px] flex justify-start'>
+            <div className='w-[68px] flex flex-col justify-center items-center'>
+              <div className='px-[4px]'>
+                <img src="./imgs/Rectangle978.png" className="w-[100%] pt-[8px]" />
+              </div>
+              <div>
+                <p>قاب موبایل</p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className='w-[54px] h-[64px] ml-[12px] text-[12px] border-[1px] flex justify-start'>
+            <div className='w-[68px] flex flex-col justify-center items-center'>
+              <div className='px-[4px]'>
+                <img src="./imgs/Rectangle978.png" className="w-[100%] pt-[8px]" />
+              </div>
+              <div>
+                <p>قاب موبایل</p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className='w-[54px] h-[64px] ml-[12px] text-[12px] border-[1px] flex justify-start'>
+            <div className='w-[68px] flex flex-col justify-center items-center'>
+              <div className='px-[4px]'>
+                <img src="./imgs/Rectangle978.png" className="w-[100%] pt-[8px]" />
+              </div>
+              <div>
+                <p>قاب موبایل</p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className='w-[54px] h-[64px] ml-[12px] text-[12px] border-[1px] flex justify-start'>
+            <div className='w-[68px] flex flex-col justify-center items-center'>
+              <div className='px-[4px]'>
+                <img src="./imgs/Rectangle978.png" className="w-[100%] pt-[8px]" />
+              </div>
+              <div>
+                <p>قاب موبایل</p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className='w-[54px] h-[64px] ml-[12px] text-[12px] border-[1px] flex justify-start'>
+            <div className='w-[68px] flex flex-col justify-center items-center'>
+              <div className='px-[4px]'>
+                <img src="./imgs/Rectangle978.png" className="w-[100%] pt-[8px]" />
+              </div>
+              <div>
+                <p>قاب موبایل</p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className='w-[54px] h-[64px] ml-[12px] text-[12px] border-[1px] flex justify-start'>
+            <div className='w-[68px] flex flex-col justify-center items-center'>
+              <div className='px-[4px]'>
+                <img src="./imgs/Rectangle978.png" className="w-[100%] pt-[8px]" />
+              </div>
+              <div>
+                <p>قاب موبایل</p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className='w-[54px] h-[64px] ml-[12px] text-[12px] border-[1px] flex justify-start'>
+            <div className='w-[68px] flex flex-col justify-center items-center'>
+              <div className='px-[4px]'>
+                <img src="./imgs/Rectangle978.png" className="w-[100%] pt-[8px]" />
+              </div>
+              <div>
+                <p>قاب موبایل</p>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
     </>
   );
