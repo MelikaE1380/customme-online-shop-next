@@ -10,7 +10,12 @@ function Header() {
                 <img src="./icons/Menu.svg" />
 
                <div className="w-[calc(100%-88px)] relative"> 
-                <input placeholder="جستجو در" className="w-full pr-[10px] relative text-[#A72F3B] h-[32px] border-[#D6D6D6] rounded-full border-[1px] focus:outline-none" />
+                <div className="relative">
+                    <div className="absolute z-50 right-[10px]"><span>جستجو در</span>
+                    <span><img src="./icons/TYPE.svg" /></span>
+                    </div>
+                <input className="w-full pr-[10px] relative text-[#A72F3B] h-[32px] border-[#D6D6D6] rounded-full border-[1px] focus:outline-none" />
+                </div>
                 <img className="absolute left-[12px] top-[8px]" src="./icons/search-normal.svg" />
                 </div>
 

@@ -1,5 +1,6 @@
 
 
+import BestSellers from "@/components/BestSellers/BestSellers";
 import Header from "@/components/Header";
 import SwiperComponent from "@/components/swiper/swiperCategory";
 
@@ -44,6 +45,8 @@ export default function Home() {
 
 
     <SwiperComponent />
+
+    <BestSellers />
 <div className="h-[900px]"></div>
 
     </>
